@@ -1,0 +1,7 @@
+lifetime: 30
+max_tokens: 0
+login_form:
+  field_label: 'Keep me signed in'
+cookie_prefix: PL
+_core:
+  default_config_hash: RhaO7eY-cucuJJ-Utsxfzr8SjQlpiehb97MslQ0tMzA

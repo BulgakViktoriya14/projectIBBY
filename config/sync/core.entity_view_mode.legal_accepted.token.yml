@@ -1,0 +1,10 @@
+uuid: ecb412f1-6c9b-4e84-91ab-26782ef4f75f
+langcode: en
+status: true
+dependencies:
+  module:
+    - legal
+id: legal_accepted.token
+label: Token
+targetEntityType: legal_accepted
+cache: true

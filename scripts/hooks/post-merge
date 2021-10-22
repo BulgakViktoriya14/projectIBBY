@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# git hook for git pull
+check_file() {
+  files="$(git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD)"
+  echo "$files" | grep --quiet "$1" && eval "$2"
+}
+
+# Run `composer install` if need.
+check_file composer.json "composer install --no-dev --optimize-autoloader"

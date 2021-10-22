@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "airbnb-base",
+    "eslint:recommended"
+  ],
+  "root": true,
+  "globals": {
+    "Drupal": true,
+    "drupalSettings": true,
+    "drupalTranslations": true,
+    "domready": true,
+    "jQuery": true,
+    "_": true,
+    "matchMedia": true,
+    "Backbone": true,
+    "Modernizr": true,
+    "CKEDITOR": true
+  },
+  "rules": {
+    "no-param-reassign": 0,
+    "no-unused-vars": "warn"
+  }
+}

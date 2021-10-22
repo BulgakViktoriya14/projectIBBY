@@ -1,0 +1,17 @@
+uuid: 3e15dae7-0d38-443e-aa5f-cdd4095e69f9
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: Fy6Lx7lfECdDEQkAKxleg3e9aO_7p45EgfVrFP5L9UA
+id: stage
+label: STAGE
+description: 'Split for STAGE'
+folder: ../config/split/stage
+module: {  }
+theme: {  }
+blacklist: {  }
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

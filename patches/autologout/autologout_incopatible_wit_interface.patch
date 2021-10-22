@@ -1,0 +1,50 @@
+diff --git a/src/AutologoutManager.php b/src/AutologoutManager.php
+index 1495177..d7379f4 100644
+--- a/src/AutologoutManager.php
++++ b/src/AutologoutManager.php
+@@ -14,6 +14,7 @@ use Drupal\Core\Session\AnonymousUserSession;
+ use Drupal\user\UserData;
+ use Drupal\Component\Utility\Xss;
+ use Drupal\Core\StringTranslation\StringTranslationTrait;
++use Drupal\user\UserInterface;
+
+ /**
+  * Defines an AutologoutManager service.
+@@ -328,7 +329,7 @@ class AutologoutManager implements AutologoutManagerInterface {
+   /**
+    * {@inheritdoc}
+    */
+-  public function logoutRole($user) {
++  public function logoutRole(UserInterface $user) {
+     if ($this->autoLogoutSettings->get('role_logout')) {
+       foreach ($user->roles as $name => $role) {
+         if ($this->configFactory->get('autologout.role.' . $name . '.enabled')) {
+diff --git a/src/AutologoutManagerInterface.php b/src/AutologoutManagerInterface.php
+index 2ba962c..7b69f2f 100644
+--- a/src/AutologoutManagerInterface.php
++++ b/src/AutologoutManagerInterface.php
+@@ -2,7 +2,7 @@
+
+ namespace Drupal\autologout;
+
+-use Drupal\user\Entity\User;
++use Drupal\user\UserInterface;
+
+ /**
+  * Interface for AutologoutManager.
+@@ -76,13 +76,13 @@ interface AutologoutManagerInterface {
+   /**
+    * Helper to determine if a given user should be autologged out.
+    *
+-   * @param \Drupal\user\Entity\User $user
++   * @param \Drupal\user\UserInterface $user
+    *   User entity.
+    *
+    * @return bool
+    *   TRUE if the user should be autologged out, otherwise FALSE.
+    */
+-  public function logoutRole(User $user);
++  public function logoutRole(UserInterface $user);
+
+   /**
+    * Display the inactivity message if required when the user is logged out.

@@ -1,0 +1,29 @@
+uuid: cd149731-fb75-427e-9f5f-b648a9f92c4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_last_password_reset
+    - field.field.user.user.field_password_expiration
+  module:
+    - user
+_core:
+  default_config_hash: RfP8MLeOVhj2locDCap09BJrA3FhFeR0kGGXC3WdgDw
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  contact: true
+  field_last_password_reset: true
+  field_password_expiration: true
+  langcode: true
+  language: true
+  path: true
+  timezone: true

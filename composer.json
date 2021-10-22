@@ -1,0 +1,148 @@
+{
+    "name": "ibby/drupal8-template",
+    "description": "Simple composer based drupal 8 build",
+    "type": "project",
+    "license": "GPL-2.0+",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "require": {
+        "composer/installers": "^1.2",
+        "cweagans/composer-patches": "^1.5.0",
+        "drupal/admin_toolbar": "^2.3",
+        "drupal/advagg": "^4.1",
+        "drupal/autologout": "1.3",
+        "drupal/backup_migrate": "^4.1",
+        "drupal/bootstrap_barrio": "^4.32",
+        "drupal/captcha": "^1.1",
+        "drupal/config_ignore": "^2.2",
+        "drupal/config_override_warn": "^1.3",
+        "drupal/config_split": "^1.4",
+        "drupal/core-composer-scaffold": "^8.8",
+        "drupal/core-recommended": "^8.9",
+        "drupal/ctools": "^3.4",
+        "drupal/devel": "^4.0",
+        "drupal/diff": "^1.0",
+        "drupal/email_registration": "^1.1",
+        "drupal/entity": "^1.0",
+        "drupal/entity_reference_revisions": "^1.8",
+        "drupal/environment_indicator": "^4.0",
+        "drupal/field_group": "^3.1",
+        "drupal/google_analytics": "^2.5",
+        "drupal/google_tag": "^1.4",
+        "drupal/hreflang": "^1.3",
+        "drupal/image_effects": "^3.0",
+        "drupal/imagemagick": "^3.1",
+        "drupal/inline_entity_form": "1.x-dev",
+        "drupal/lazyloader": "^1.0@alpha",
+        "drupal/legal": "^1.0@rc",
+        "drupal/linkit": "^4.3",
+        "drupal/login_security": "^1.5",
+        "drupal/memcache": "^2.1",
+        "drupal/metatag": "^1.13",
+        "drupal/module_filter": "^3.1",
+        "drupal/nocurrent_pass": "^1.0",
+        "drupal/paragraphs": "^1.12",
+        "drupal/password_policy": "^3.0@alpha",
+        "drupal/pathauto": "^1.8",
+        "drupal/persistent_login": "1.3",
+        "drupal/rabbit_hole": "1.x-dev",
+        "drupal/recaptcha": "^3.0",
+        "drupal/redirect": "^1.6",
+        "drupal/remove_username": "^1.0",
+        "drupal/reroute_email": "^1.2",
+        "drupal/search_api": "^1.17",
+        "drupal/search_api_solr": "^3.9",
+        "drupal/seckit": "2.0.0-rc1",
+        "drupal/session_limit": "^1.0@beta",
+        "drupal/simple_sitemap": "^3.7",
+        "drupal/swiftmailer": "^1.0@alpha",
+        "drupal/token": "^1.7",
+        "drupal/ultimate_cron": "^2.0@alpha",
+        "drupal/user_registrationpassword": "^1.0@alpha",
+        "drupal/username_enumeration_prevention": "^1.1",
+        "drupal/views_bulk_operations": "^3.8",
+        "drupal/views_infinite_scroll": "^1.7",
+        "drush/drush": "~9.0",
+        "hirak/prestissimo": "^0.3.9",
+        "roave/security-advisories": "dev-master",
+        "wikimedia/composer-merge-plugin": "^1.4",
+        "zaporylie/composer-drupal-optimizations": "^1.1"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "2.*",
+        "drupal/coder": "8.*",
+        "vlucas/phpdotenv": "^2.4"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "post-install-cmd": [
+            "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+            "sh ./scripts/tools/setup_git_hooks.sh"
+        ],
+        "post-update-cmd": [
+            "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
+        ]
+    },
+    "config": {
+        "bin-dir": "bin/",
+        "discard-changes": true,
+        "preferred-install": "dist",
+        "secure-http": false,
+        "sort-packages": true
+    },
+    "extra": {
+        "installer-types": ["bower-asset", "npm-asset"],
+        "installer-paths": {
+            "web/core": ["type:drupal-core"],
+            "web/modules/contrib/{$name}": ["type:drupal-module"],
+            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "web/libraries/{$name}": ["type:drupal-library", "type:bower-asset", "type:npm-asset"],
+            "web/contrib/{$name}": ["type:drupal-drush"]
+        },
+        "patches": {
+            "drupal/ultimate_cron": {
+                "Disabled jobs are always running": "https://www.drupal.org/files/issues/2019-04-22/ultimate_cron-3049883.patch"
+            },
+            "drupal/autologout": {
+                "AutologoutManager class incompatible with interface": "./patches/autologout/autologout_incopatible_wit_interface.patch"
+            },
+            "drupal/persistent_login": {
+                "Fix tab permissions": "./patches/persistent_login/persistent_login-user_task_permission-2899530-6.patch"
+            }
+        },
+        "enable-patching": true,
+        "drupal-scaffold": {
+            "excludes": [
+                ".htaccess",
+                "robots.txt",
+                "web.config"
+            ],
+            "locations": {
+                "web-root": "web/"
+            }
+        },
+        "merge-plugin": {
+            "include": [
+                "web/modules/custom/*/composer.json"
+            ],
+            "merge-extra": true,
+            "merge-extra-deep": true,
+            "merge-scripts": true,
+            "replace": false,
+            "ignore-duplicates": true
+        }
+    }
+}

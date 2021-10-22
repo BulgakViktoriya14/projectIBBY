@@ -1,0 +1,31 @@
+uuid: d59df9f1-9490-480e-b967-b51f46e6637e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_type
+    - node.type.content_type
+    - paragraphs.paragraphs_type.paragraph
+  module:
+    - entity_reference_revisions
+id: node.content_type.field_content_type
+field_name: field_content_type
+entity_type: node
+bundle: content_type
+label: 'content type item'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      paragraph: paragraph
+    target_bundles_drag_drop:
+      paragraph:
+        enabled: true
+        weight: 2
+field_type: entity_reference_revisions

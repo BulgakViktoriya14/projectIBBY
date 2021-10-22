@@ -1,0 +1,1 @@
+This directory for DEV split configurations

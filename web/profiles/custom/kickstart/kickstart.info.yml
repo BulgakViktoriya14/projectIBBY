@@ -1,0 +1,97 @@
+name: Kickstart
+type: profile
+description: 'Install with best practice features pre-configured.'
+core: 8.x
+install:
+  # Core modules
+  - block
+  - block_content
+  - ckeditor
+  - color
+  - config
+  - contact
+  - contextual
+  - datetime
+  - dblog
+  - dynamic_page_cache
+  - editor
+  - editor
+  - field_ui
+  - file
+  - image
+  - media
+  - media_library
+  - menu_link_content
+  - menu_ui
+  - node
+  - options
+  - page_cache
+  - path
+  - quickedit
+  - taxonomy
+  - views
+  - views_ui
+  - update
+  # Usefull contrib modules for development
+  - admin_toolbar
+  - admin_toolbar_tools
+  - backup_migrate
+  - config_override_warn
+  - config_split
+  - environment_indicator
+  - module_filter
+  - reroute_email
+  # Usefull security contrib modules
+  - autologout
+  - captcha
+  - password_policy
+  - password_policy_character_types
+  - password_policy_characters
+  - password_policy_consecutive
+  - password_policy_history
+  - password_policy_length
+  - password_policy_username
+  - persistent_login
+  - rabbit_hole
+  - recaptcha
+  - seckit
+  - session_limit
+  - username_enumeration_prevention
+  - login_security
+  # Usefull perfomance contrib modules
+  - advagg
+  - advagg_bundler
+  - advagg_ext_minify
+  - advagg_css_minify
+  - advagg_js_minify
+  - advagg_mod
+  - diff
+  - imagemagick
+  - image_effects
+  - lazyloader
+  - remove_username
+  - ultimate_cron
+  - views_bulk_operations
+  - views_infinite_scroll
+  # Usefull SEO contrib modules
+  - hreflang
+  - metatag
+  - pathauto
+  - redirect
+  - swiftmailer
+  - token
+  # Other usefull contrib modules
+  - email_registration
+  - entity_reference_revisions
+  - field_group
+  - inline_entity_form
+  - legal
+  - linkit
+  - nocurrent_pass
+  - paragraphs
+  - search_api
+  - search_api_solr
+  - user_registrationpassword
+themes:
+  - bootstrap_barrio
+  - seven

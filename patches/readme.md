@@ -1,0 +1,1 @@
+This directory contains all patches, all patches should be divided into folders with the names of the modules to which they relate.

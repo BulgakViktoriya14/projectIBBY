@@ -1,0 +1,17 @@
+uuid: d19e45a1-876a-4d26-a273-329c3489a1c0
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: WVuOTwt8DL68mralKqSk7fXj9o2sHRTdXF7HfAtKUeo
+id: local
+label: LOCAL
+description: 'Split for local'
+folder: ../config/split/local
+module: {  }
+theme: {  }
+blacklist: {  }
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

@@ -1,0 +1,26 @@
+uuid: 2ff5d83d-908e-4009-b1ea-ed089d24dfc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_last_password_reset
+    - field.field.user.user.field_password_expiration
+  module:
+    - user
+_core:
+  default_config_hash: r9vpwWxOxzvRI2Mm55DhZOhByfSr5l_UVBLEHuC0RcY
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  member_for:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_last_password_reset: true
+  field_password_expiration: true
+  langcode: true
+  search_api_excerpt: true

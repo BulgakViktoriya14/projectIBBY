@@ -1,0 +1,109 @@
+# Ignore configuration files that may contain sensitive information.
+.idea
+.vagrant
+backup
+index.html
+
+# Ignore binaries.
+/bin
+
+# Ignore non-custom parts of Drupal.
+web/core
+web/libraries
+web/modules/contrib
+web/profiles/contrib
+web/themes/contrib
+web/sites/default/files
+web/sites/default/settings.php
+web/sites/default/default.services.yml
+web/sites/default/default.settings.php
+web/sites/default/services.yml
+web/sites/development.services.yml
+web/sites/example.settings.local.php
+web/sites/example.sites.php
+web/.csslintrc
+web/.editorconfig
+web/.eslintignore
+web/.eslintrc
+web/.gitattributes
+web/autoload.php
+web/index.php
+web/update.php
+web/web.config
+web/.ht.router.php
+web/.eslintrc.json
+
+# Ignore site specific settings.php
+environments/*/settings.php
+
+# Ignore Composer-managed dependencies.
+## Other
+drush
+vendor
+node_modules
+web/_ignore
+console
+
+## OS specific mess.
+Thumbs.db
+.DS_Store
+.AppleDouble
+.LSOverride
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Eclipse
+*.pydevproject
+.project
+.metadata
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
+# Ignore build artifacts
+deployment_identifier
+/deploy
+bin/*
+tmp
+reports
+
+#XHProf
+xhprof_*
+
+#Netbeans IDE
+nbproject
+nbproject/*
+
+# DrupalVM
+.vagrant/
+
+# DevDesktop
+*.dd
+
+#Exports
+*.gz
+*.sql
+*.zip
+
+# PHPStorm
+atlassian-ide-plugin.xml
+
+#NPM
+npm-debug.log
+
+# Drush 9 Checksums
+drush/sites/.checksums
+/.editorconfig
+/.gitattributes

@@ -1,0 +1,17 @@
+uuid: ad25f44c-f4cd-4716-93c4-58ad973bb024
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: MslNIr7znAzVfQFAGm2MSuzk0bWARJva_fh2_BzWOQI
+id: dev
+label: DEV
+description: 'Split for DEV env'
+folder: ../config/split/dev
+module: {  }
+theme: {  }
+blacklist: {  }
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0
